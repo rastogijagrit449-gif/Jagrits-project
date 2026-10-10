@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Village | Digital India</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f8f4;
+  color: #183b2b;
+  line-height: 1.6;
+}
+
+header {
+  background: #126b45;
+  color: white;
+  padding: 24px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+header h2 { font-size: 25px; }
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 65px 7%;
+  background: linear-gradient(120deg, #d8f3dc, #b7e4c7);
+}
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.15;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 650px;
+  font-size: 17px;
+}
+
+button {
+  background: #126b45;
+  color: white;
+  padding: 12px 19px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+button:hover { background: #084c30; }
+
+section { padding: 38px 7%; }
+
+h2 { margin-bottom: 18px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #183b2b12;
+}
+
+.card h3 { margin: 8px 0; }
+
+.emoji { font-size: 36px; }
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #a7c7b2;
+  border-radius: 7px;
+  margin-top: 5px;
+  background: white;
+  font-size: 16px;
+}
+
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: #123d2b;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🌱 Smart Village</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#tools">Tools</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <h1>Building Smarter Villages<br>for a Better Tomorrow</h1>
+  <p>
+    Technology can transform rural India through digital
+    education, smart farming, clean energy, better healthcare
+    and responsible water management.
+  </p>
+  <button onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">
+    Explore Smart Solutions
+  </button>
+</div>
+
+<section id="about">
+  <h2>What Is Smart Village Development?</h2>
+  <p>
+    Smart village development means using modern technology
+    to improve the lives of rural people. Affordable internet,
+    solar energy, digital services and modern farming can
+    create better opportunities for everyone.
+  </p>
+</section>
+
+<section id="solutions">
+  <h2>Technology for Rural Development</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🌾</div>
+      <h3>Smart Agriculture</h3>
+      <p>Use weather information, soil testing and drip
+      irrigation to support farmers and save resources.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📚</div>
+      <h3>Digital Education</h3>
+      <p>Online learning, digital classrooms and internet
+      access can bring more learning opportunities to villages.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">☀️</div>
+      <h3>Clean Energy</h3>
+      <p>Solar panels and energy-efficient lights can help
+      villages use cleaner sources of electricity.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🏥</div>
+      <h3>Digital Healthcare</h3>
+      <p>Telemedicine can help rural residents consult
+      qualified healthcare professionals remotely.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">💧</div>
+      <h3>Water Management</h3>
+      <p>Rainwater harvesting, leak detection and efficient
+      irrigation can reduce water wastage.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📱</div>
+      <h3>Digital Services</h3>
+      <p>Digital payments and online government services
+      can make everyday tasks more convenient.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>💧 Smart Water-Saving Calculator</h2>
+  <div class="card">
+    <p>
+      Estimate how much water a household could save by
+      reducing daily water use.
+    </p>
+
+    <label for="people">Number of people in the household</label>
+    <input id="people" type="number" min="1" max="1000" value="5">
+
+    <label for="saving">Water saved per person daily (litres)</label>
+    <input id="saving" type="number" min="0" max="10000" value="10">
+
+    <button onclick="calculateWater()">Calculate Savings</button>
+
+    <p id="result" aria-live="polite">
+      Enter your values and calculate your potential savings.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Our Mission 🇮🇳</h2>
+  <div class="card">
+    <p>
+      Our goal is to promote a future where every village
+      can access useful technology, quality education,
+      clean energy and essential digital services.
+      Development should be affordable, inclusive and
+      environmentally responsible.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Smart Village | A School Technical Development Project</p>
+  <p>Technology for villages. Progress for everyone.</p>
+</footer>
+
+<script>
+function calculateWater() {
+  const people = Number(document.getElementById("people").value);
+  const saving = Number(document.getElementById("saving").value);
+  const result = document.getElementById("result");
+
+  if (
+    !Number.isInteger(people) || people < 1 ||
+    !Number.isFinite(saving) || saving < 0 ||
+    people > 1000 || saving > 10000
+  ) {
+    result.textContent = "Please enter valid positive values.";
+    return;
+  }
+
+  const daily = people * saving;
+  const monthly = daily * 30;
+  const yearly = daily * 365;
+
+  result.textContent =
+    "Estimated water savings: " +
+    daily.toLocaleString() + " litres/day, " +
+    monthly.toLocaleString() + " litres/month, and " +
+    yearly.toLocaleString() + " litres/year.";
+}
+</script>
+
+</body>
+</html>
